@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        article{
+            width: 50%;
+            text-align: left;
+        }
+        #title #text{
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>고객센터</h1></header>
+    <section>
+        <article id="userName"></article>
+        <article id="title"></article>
+        <article id="contents"></article>
+    </section>
+    <footer>
+        <button type="button" id="btn">게시</button>
+    </footer>
+
+    <script>
+        let userName = document.getElementById('userName');
+        let title = document.getElementById('title');
+        let contents = document.getElementById('contents');
+
+        let name = '전진선';
+
+        userName.innerHTML = `작성자 : ${name}`;
+        title.innerHTML = `제목 : <input type:"text" id="text">`;
+        contents.innerHTML = `<p>내용 : </p><textarea name="" id="contents" cols="50" rows="30"></textarea>`;
+
+        document.getElementById('btn').addEventListener('click',serviceCenter);
+
+        function serviceCenter(){
+            
+        }
+    </script>
+</body>
+</html>

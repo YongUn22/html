@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MyInfo.css">
+    <title>내정보 페이지</title>
+</head>
+<body>
+    <p class="logo"><a href="/main/main.html">로고</a></p>
+    <div class="container">
+        <div class="text">
+            <h1>내정보</h1>
+            <p id="nicname">닉네임 : wwt5744</p>
+            <p id="name">이름 : 전진선</p>
+            <p id="password">비밀 번호 : ********</p>
+            <p id="number">전화 번호 : 010-123-4567</p>
+            <p id="email">이메일 : ghfty44@naver.com</p>
+        </div>
+        <div class="button">
+            <button id="changeBtn" onclick="changeBtn()">정보 수정</button>
+        </div>
+    </div>
+
+    <script>
+        let nicName = document.getElementById('nicname');
+        let name = document.getElementById('name');
+        let password = document.getElementById('password');
+        let number = document.getElementById('number');
+        let email = document.getElementById('email');
+        let nicName2 = nicName.innerHTML;
+        let name2 = name.innerHTML;
+        let password2 = password.innerHTML;
+        let number2 = number.innerHTML;
+        let email2 = email.innerHTML;
+        
+        let btn = document.querySelector(".button");
+        
+        function changeBtn(){
+            nicName.innerHTML = `닉네임 : <input type="text" id="inputNicName">`;
+            name.innerHTML = `이름 : <input type="text" id="inputName">`;
+            password.innerHTML = `비밀번호 : <input type="text" id="inputPassWord">`;
+            number.innerHTML = `전화번호 : <input type="number" id="inputNumber" placeholder="숫자만 적어주세요">`;
+            email.innerHTML = `이메일 : <input type="email" id="inputEmail">`;
+        
+            btn.innerHTML = `<button id="confirm">확인</button>`;
+
+            document.getElementById("confirm").addEventListener('click', ConfirmBtn);
+        }
+
+        function ConfirmBtn(){
+            let inputNicName = document.getElementById('inputNicName').value;
+            let inputName = document.getElementById('inputName').value;
+            let inputPW = document.getElementById('inputPassWord').value;
+            let inputNum = document.getElementById('inputNumber').value;
+            let inputEmail = document.getElementById('inputEmail').value;
+
+            inputPW = inputPW.replace(inputPW.slice(0),"*".repeat(inputPW.length));
+            
+            let firstNum = inputNum.slice(0,3);
+            let secondNum = inputNum.slice(3,7);
+            let lastNum = inputNum.slice(7,12);
+            firstNum = firstNum.concat('-');
+            secondNum = secondNum.concat('-');
+            inputNum = firstNum+secondNum+lastNum;
+
+            if(inputNicName != '')
+                nicName.innerHTML = `닉네임 : ${inputNicName}`;
+            else
+                nicName.innerHTML = nicName2;
+            if(inputName != '')
+                name.innerHTML = `이름 : ${inputName}`;
+            else
+                name.innerHTML = name2;
+            if(inputPW != '')
+                password.innerHTML = `비밀 번호 : ${inputPW}`;
+            else
+                password.innerHTML = password2;
+            if(inputNum != '--')
+                number.innerHTML = `전화번호 : ${inputNum}`;
+            else
+                number.innerHTML = number2;
+            if(inputEmail != '')
+                email.innerHTML = `이메일 : ${inputEmail}`;
+            else
+                email.innerHTML = email2;
+
+            btn.innerHTML = `<button id="changeBtn" onclick="changeBtn()">정보 수정</button>`;
+        }
+    </script>
+</body>
+</html>

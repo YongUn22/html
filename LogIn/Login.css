@@ -1,0 +1,68 @@
+        *{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(46, 66, 91);
+}
+.logo a{
+    color: white;
+}
+.container{
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    margin: 0%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(40,103,155);
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+input{
+    padding: 15px;
+}
+.text-field{
+    font-size: 0.75em;
+    border: 0px; /* box-sizing: border-box;로 생성했기 때문에 100% */
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    /* margin: 0px 0px 10px; 둘다 같은 방식 */
+} 
+.btn-input{
+    font-size: 0.75em;
+    border: 0px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+.links{
+    text-align: center;
+    margin: 0px;
+}
+.links>a{
+    font-size: 0.75em;
+    color: lightgray;
+    text-decoration: none;
+    margin-right: 10px;
+}
+p{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#btn:hover{
+    cursor: pointer;
+}

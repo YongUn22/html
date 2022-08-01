@@ -1,0 +1,45 @@
+*{
+    border: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(46, 66, 91);
+}
+.ce{
+    width: 400px;
+    margin: 100px auto;
+}
+.ce div{
+    font-weight: bold;
+}
+.logo{
+    text-align: center;
+}
+.logo a{
+    color: white;
+}
+input{
+    padding: 10px;
+    width: 400px;
+    border: 1px solid darkgrey;
+    outline: none;
+    margin-top: 5px;
+}
+div{
+    margin-top: 10px;
+    color: white;
+}
+button{
+    margin-top: 20px;
+    width: 420px;
+    height: 45px;
+    background-color: black;
+    color: white;
+}
+button:hover{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

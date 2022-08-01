@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객센터 페이지</title>
+    <style>
+        section{
+            text-align: left;
+            color:white;
+        }
+        article{
+            width: 500px;
+            height: 400px;
+            background-color: black;
+            padding: 20px;
+        }
+        article ul li{
+            color: white;
+        }
+
+        footer div ul{
+            display: inline;
+        }
+        article ul a li div{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>고객센터</h1></header>
+    <section id="section">
+    </section>
+    <footer>
+        <div>
+            <ul id="pages">
+
+            </ul>
+        </div>
+        <a href="writing.html"><button type="button">글쓰기</button></a>
+    </footer>
+
+    <script>
+        let writeList = [];
+        let pageBtn = [];
+        let liList = [];
+        let aList = [];
+        let countList = [];
+
+        addList();            
+        
+        function addList(){
+            writeList.push('첫글 입니다~');
+            writeList.push('두번째 글 입니다.');
+            writeList.push('세번째 글입니다.');
+            writeList.push('네번째 글입니다.');
+            showList();
+        }
+
+        function showList(){
+
+            let section = document.getElementById('section');
+
+            let article = document.createElement('article');
+            let ul = document.createElement('ul');
+            for(let i=0; i<writeList.length;i++)
+            {
+                liList[i] = document.createElement('li');
+                aList[i] = document.createElement('a');
+                aList[i].href = 'article.html';
+                aList[i].id = `countBtn${i}`;
+                countList[i] = document.createElement('div');
+                countList[i].id = `countResult${i}`;
+                countList[i].innerText = 0;
+            }
+
+            section.appendChild(article);
+            article.appendChild(ul);
+            
+            for(let i= writeList.length-1; i>= 0; i--)
+            {
+                ul.appendChild(aList[i]);
+                liList[i].innerText = `${writeList[i]}`;
+                
+                aList[i].appendChild(liList[i]);
+                liList[i].appendChild(countList[i]);
+            }
+
+            for(let i=0; i<aList.length;i++){
+                    document.getElementById(`countBtn${i}`).addEventListener('click', function(){
+                        
+                    let result = document.getElementById(`countResult${i}`);
+
+                    let number = result.innerText;
+                    
+                    number = Number(number)+1;
+                    
+                    result.innerText = number;
+                });
+            }
+        }
+    </script>
+</body>
+</html>

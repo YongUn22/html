@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 페이지</title>
+    <style>
+        
+        article{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>고객센터</h1></header>
+    <section>
+        <article id="title">
+            제목 : 
+        </article>
+        <article id="writer">
+            작성자 : 
+        </article>
+        <article id="contents">
+            내용 : 
+        </article>
+    </section>
+    <footer>
+        <h3>답변</h3>
+        <div id="box">
+            <textarea name="" id="text" cols="50" rows="30"></textarea>
+            <button type="button" id="btn">게시</button>
+            <a href="ServiceCenter.html"><button>메인으로</button></a>
+        </div>
+    </footer>
+
+    <script>
+        let title = document.getElementById('title');
+        let writer = document.getElementById('writer');
+        let contents = document.getElementById('contents');
+
+        title.innerText = `제목 : 첫글입니다~`;
+        writer.innerText = `작성자 : 전진선`;
+        contents.innerText = `내용 : 게임이 재미없습니다 환불하고 싶습니다.`;
+
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+
+        let box = document.getElementById('box');
+
+        btn.addEventListener('click',function(){
+            let textContents = text.value;
+
+            box.innerHTML = `<p>${textContents}</p>`;
+            box.innerHTML += `<a href="ServiceCenter.html"><button>메인으로</button></a>`;
+        })
+    </script>
+</body>
+</html>
